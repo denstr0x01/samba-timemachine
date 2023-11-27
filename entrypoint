@@ -18,6 +18,10 @@ createUser()
         echo Creating user ${USER} with a samba password of ${PASS}
         printf "$PASS\n$PASS\n" | smbpasswd -s -a ${USER}
     fi
+    if useradd -u 1312 -g timemachine_users Guest ; then
+        echo Creating user Guest with empty samba password
+        printf "\n\n" | smbpasswd -s -a Guest
+    fi
 }
 
 backupConfig()
