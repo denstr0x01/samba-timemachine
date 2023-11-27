@@ -32,6 +32,7 @@ backupConfig()
     else
 	echo "Granting permissions to ${USER}/${USERID} with  timemachine_users/${GROUPID} on ${BACKUPDIR}"
         chown -R ${USER}:${GROUPID} ${BACKUPDIR}
+        chown -R Guest:${GROUPID} ${BACKUPDIR}
     fi
 }
 
