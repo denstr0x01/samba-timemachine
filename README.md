@@ -5,11 +5,11 @@ This is a docker container that contains SAMBA and is configured to provide Appl
 To use the docker container do the following (it uses the mountpoint /backups to store your backups):
 
 ```
-docker pull awlnx/samba-timemachine
+docker pull denstr0x01/samba-timemachine
 docker run -d -t \
     -v /backups/timemachine:/backups:z \
     -p 10445:445 \
-    --restart unless-stopped awlnx/samba-timemachine \
+    --restart unless-stopped denstr0x01/samba-timemachine \
     --name timemachine
 ```
 
@@ -30,7 +30,7 @@ docker run -d -t  \
     -v /backups:/backups:z \
     -p 10445:445 \
     --name timemachine \
-    --restart unless-stopped awlnx/samba-timemachine
+    --restart unless-stopped denstr0x01/samba-timemachine
 ```
 
 The container only runs smbd to find it on the network the best way is avahi (mDNS) there is an example service file included. This can be copied to /etc/avahi/services/timemachine.service or run in a container.
