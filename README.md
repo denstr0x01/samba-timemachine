@@ -9,8 +9,7 @@ docker pull denstr0x01/samba-timemachine
 docker run -d -t \
     -v /backups/timemachine:/backups:z \
     -p 10445:445 \
-    --restart unless-stopped denstr0x01/samba-timemachine \
-    --name timemachine
+    --restart unless-stopped denstr0x01/samba-timemachine
 ```
 
 Note that due to the use of port 10445 this container can be run along side a normal SAMBA service.
@@ -29,7 +28,6 @@ docker run -d -t  \
     -e TMSIZE=1024000 \
     -v /backups:/backups:z \
     -p 10445:445 \
-    --name timemachine \
     --restart unless-stopped denstr0x01/samba-timemachine
 ```
 
